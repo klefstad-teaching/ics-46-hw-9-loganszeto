@@ -23,7 +23,7 @@ bool is_adjacent(const string& word1, const string& word2) {
 
 vector<string> generate_word_ladder(const string& begin_word, const string& end_word, const set<string>& word_list) {
     if (begin_word == end_word) {
-        error(begin_word, end_word, "Start and end words must be different");
+        return {begin_word};
     }
 
     queue<vector<string>> ladder_queue;
@@ -54,6 +54,7 @@ vector<string> generate_word_ladder(const string& begin_word, const string& end_
     }
     return {};
 }
+
 
 void load_words(set<string>& word_list, const string& file_name) {
     ifstream file(file_name);
